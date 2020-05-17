@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:tipcalculator/services/tip_score.dart';
 import 'package:tipcalculator/utilities/constants.dart';
 
 import '../round_button.dart';
 
-typedef void ScoreCallback(double subtract, double add);
-
 class FiveButtonRow extends StatefulWidget {
-  final ScoreCallback callbackScore;
 
-  FiveButtonRow({@required this.callbackScore});
+  final TipScore tipScore;
+
+  FiveButtonRow({@required this.tipScore});
 
   @override
   _FiveButtonRowState createState() => _FiveButtonRowState();
@@ -30,6 +30,7 @@ class _FiveButtonRowState extends State<FiveButtonRow> {
       buttonThreeColor = Colors.white;
       buttonFourColor = Colors.white;
       buttonFiveColor = Colors.white;
+      print(widget.tipScore.hashCode);
     });
   }
 
@@ -44,8 +45,7 @@ class _FiveButtonRowState extends State<FiveButtonRow> {
               resetButtonFill();
               buttonOneColor = Colors.red;
             });
-            widget.callbackScore(currentValue, 1);
-            currentValue = 1;
+            widget.tipScore.setScore(1);
           },
           content: Text(
             "1",
@@ -63,8 +63,7 @@ class _FiveButtonRowState extends State<FiveButtonRow> {
               resetButtonFill();
               buttonTwoColor = Colors.orange;
             });
-            widget.callbackScore(currentValue, 2);
-            currentValue = 2;
+            widget.tipScore.setScore(2);
           },
           content: Text(
             "2",
@@ -82,8 +81,7 @@ class _FiveButtonRowState extends State<FiveButtonRow> {
               resetButtonFill();
               buttonThreeColor = Colors.yellow;
             });
-            widget.callbackScore(currentValue, 3);
-            currentValue = 3;
+            widget.tipScore.setScore(3);
           },
           content: Text(
             "3",
@@ -101,8 +99,7 @@ class _FiveButtonRowState extends State<FiveButtonRow> {
               resetButtonFill();
               buttonFourColor = Colors.blue;
             });
-            widget.callbackScore(currentValue, 4);
-            currentValue = 4;
+            widget.tipScore.setScore(4);
           },
           content: Text(
             "4",
@@ -120,8 +117,7 @@ class _FiveButtonRowState extends State<FiveButtonRow> {
               resetButtonFill();
               buttonFiveColor = Colors.green;
             });
-            widget.callbackScore(currentValue, 5);
-            currentValue = 5;
+            widget.tipScore.setScore(5);
           },
           content: Text(
             "5",

@@ -10,9 +10,10 @@ Color kIconColor = Colors.white;
 
 // TextStyle
 TextStyle kAppBarText = TextStyle(
-  color: kPrimaryText,
+  color: Colors.white,
   fontSize: 25.0,
   fontFamily: "RobotoMono",
+  fontWeight: FontWeight.bold
 );
 
 TextStyle kCardText = TextStyle(

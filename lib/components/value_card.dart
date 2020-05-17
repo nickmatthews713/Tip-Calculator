@@ -1,18 +1,24 @@
 import 'package:flutter/material.dart';
-
-import '../services/tip_score.dart';
+import 'package:tipcalculator/services/tip_score.dart';
 import '../utilities/constants.dart';
 
-class ScoreCard extends StatelessWidget {
-  final String description;
-  final Widget ratingTool;
-  final TipScore score;
+class ValueCard extends StatefulWidget {
 
-  ScoreCard({
-    @required this.description,
-    @required this.ratingTool,
-    this.score,
+  final Widget valueSelector;
+  final String cardDesc;
+  final TipScore tipScore;
+
+  ValueCard({
+    @required this.valueSelector,
+    @required this.cardDesc,
+    @required this.tipScore,
   });
+
+  @override
+  _ValueCardState createState() => _ValueCardState();
+}
+
+class _ValueCardState extends State<ValueCard> {
 
   @override
   Widget build(BuildContext context) {
@@ -37,11 +43,11 @@ class ScoreCard extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: <Widget>[
           Text(
-            description,
+            widget.cardDesc,
             textAlign: TextAlign.center,
             style: kCardText,
           ),
-          ratingTool,
+          widget.valueSelector,
         ],
       ),
     );

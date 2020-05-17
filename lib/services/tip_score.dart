@@ -16,4 +16,8 @@ class TipScore {
   double getScore() {
     return _score;
   }
+
+  void setScore(double newScore) {
+    _score = newScore;
+  }
 }
