@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 // Colors
-Color kColorPrimary = Color(0xff4CAF50);
+Color kColorPrimary = Colors.deepPurpleAccent;
 Color kColorDarkPrimary = Color(0x388E3C);
 Color kPrimaryText = Color(0xff212121);
 Color kSecondaryText = Color(0xff757575);

@@ -11,7 +11,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Tip Calculator',
-      theme: ThemeData(
+      theme: ThemeData.light().copyWith(
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
       initialRoute: '/',

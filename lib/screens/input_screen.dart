@@ -4,29 +4,28 @@ import 'package:tipcalculator/components/value_card.dart';
 import 'package:tipcalculator/services/card_library.dart';
 import 'package:tipcalculator/utilities/constants.dart';
 
-import '../services/tip_score.dart';
-
 class InputScreen extends StatefulWidget {
   @override
   _InputScreenState createState() => _InputScreenState();
 }
 
 class _InputScreenState extends State<InputScreen> {
-
   List<ValueCard> cardList = List();
 
   @override
   void initState() {
     super.initState();
-    //TODO: add ValueCard(s) to cardList
+    //TODO: add ValueCard(s) to cardList (Shared Preferences)
     cardList.add(CardLibrary.library['service_rating']);
+    cardList.add(CardLibrary.library['food_rating']);
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomPadding: false,
       appBar: AppBar(
-        backgroundColor: Colors.green,
+        backgroundColor: kColorPrimary,
         title: Text(
           "Tip Calculator",
           style: kAppBarText,
@@ -54,8 +53,7 @@ class _InputScreenState extends State<InputScreen> {
             padding: EdgeInsets.symmetric(vertical: 15.0, horizontal: 15.0),
             child: Column(
                 crossAxisAlignment: CrossAxisAlignment.stretch,
-                children: cardList
-            ),
+                children: cardList),
           ),
         ],
       ),

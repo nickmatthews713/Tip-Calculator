@@ -12,11 +12,11 @@ class _MoneyInputState extends State<MoneyInput> {
 
   @override
   Widget build(BuildContext context) {
-    TextStyle _ts = TextStyle(fontSize: 26.0);
+    TextStyle _ts = TextStyle(fontSize: 20.0);
 
     return MoneyTextFormField(
       settings: MoneyTextFormFieldSettings(
-          controller: longCtrl,
+          controller: compactCtrl,
           moneyFormatSettings: MoneyFormatSettings(
               currencySymbol: '\$',
               displayFormat: MoneyDisplayFormat.symbolOnRight),
@@ -24,6 +24,7 @@ class _MoneyInputState extends State<MoneyInput> {
               padding: EdgeInsets.all(15.0),
               labelText: 'Tip percentage: 0.20',
               labelStyle: _ts,
+              hintText: "Enter Amount",
               inputStyle: _ts.copyWith(color: Colors.orange),
               formattedStyle: _ts.copyWith(color: Colors.blue))),
     );

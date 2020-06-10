@@ -5,7 +5,6 @@ import 'package:tipcalculator/utilities/constants.dart';
 import '../round_button.dart';
 
 class FiveButtonRow extends StatefulWidget {
-
   final TipScore tipScore;
 
   FiveButtonRow({@required this.tipScore});
@@ -15,6 +14,7 @@ class FiveButtonRow extends StatefulWidget {
 }
 
 class _FiveButtonRowState extends State<FiveButtonRow> {
+  // TODO: keep track of last clicked button to avoid unnecessary reset ~Soma
   Color buttonOneColor = Colors.white;
   Color buttonTwoColor = Colors.white;
   Color buttonThreeColor = Colors.white;
